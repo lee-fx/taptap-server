@@ -19,10 +19,14 @@ import (
 	"wsserver/zlog"
 )
 
+/*
+	示例
+*/
+
 var (
 	configFile string
-
 )
+
 func ConfigLocalFilesystemLogger(logPath string, logFileName string, maxAge time.Duration, rotationTime time.Duration) {
 	baseLogPaht := path.Join(logPath, logFileName)
 	writer, err := rotatelogs.New(
@@ -73,23 +77,30 @@ func (this *PingRouter) Handle(request iserverface.IRequest) {
 	}
 }
 
-
-
 func main() {
+
+	// 初始化配置文件
 	initCmd()
+
+	// 初始化 log文件
 	ConfigLocalFilesystemLogger("./", "face-service.log", time.Duration(86400)*time.Second, time.Duration(604800)*time.Second)
+
 	var err error = nil
 	bindAddress := ""
 	if err = configs.LoadConfig(configFile); err != nil {
-		fmt.Println("Load config json error:",err)
+		fmt.Println("Load config json error:", err)
 	}
+
+	// 初始化redis
 	common.InitRedis()
+
+	// 初始化server
 	server.GWServer = server.NewServer()
 
 	//配置路由
 	server.GWServer.AddRouter("ping", &PingRouter{})
 
-
+	//
 	bindAddress = fmt.Sprintf("%s:%d", configs.GConf.Ip, configs.GConf.Port)
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()

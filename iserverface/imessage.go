@@ -5,7 +5,7 @@ package iserverface
 */
 type IMessage interface {
 	GetDataLen() uint32 //获取消息数据段长度
-	GetMsgType() int   //获取消息ID
+	GetMsgType() int   //获取消息类型
 	GetData() []byte   //获取消息内容
-	GetMsgID() string   //获取消息内容
+	GetMsgID() string   //获取消息id
 }

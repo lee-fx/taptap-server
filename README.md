@@ -14,7 +14,7 @@
 app-server -- 源码目录
 ├── common -- 通用函数
 ├── configs -- 配置文件
-├── examples -- 启动main
+├── examples -- 示例
 ├── iserverface -- 接口层
 ├── server -- 实现层
 ├── vendor -- 依赖包
@@ -31,7 +31,7 @@ app-server -- 源码目录
 
 ## 微信
 
-微信，我一定第一时间改正。[微信]
+联系我：[微信]
 li18347457131
 
 ## 许可证

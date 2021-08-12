@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// 发送get请求
 func HttpGet(url string, params map[string]interface{}) (retData map[string]interface{}) {
 	paramStr := "?"
 	i := 0
@@ -40,6 +41,7 @@ func HttpGet(url string, params map[string]interface{}) (retData map[string]inte
 	return retData
 }
 
+// 发送post请求
 func HttpPost(url string, params string) (stringBody string) {
 	resp, err := http.Post(
 		url,

@@ -17,7 +17,7 @@ func (r *Request) GetData() []byte {
 	return r.msg.GetData()
 }
 
-//获取请求的消息的ID
+//获取请求的消息的类型
 func (r *Request) GetMsgType() int {
 	return r.msg.GetMsgType()
 }
