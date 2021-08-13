@@ -72,6 +72,8 @@ type PingRouter struct {
 func (this *PingRouter) Handle(request iserverface.IRequest) {
 
 	err := request.GetConnection().SendMessage(request.GetMsgType(), []byte("ping...ping...ping"))
+	res := request.GetData()
+	fmt.Println(string(res))
 	if err != nil {
 		zlog.Error(err)
 	}

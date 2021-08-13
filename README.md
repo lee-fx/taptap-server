@@ -14,20 +14,13 @@
 app-server -- 源码目录
 ├── common -- 通用函数
 ├── configs -- 配置文件
-├── examples -- 示例
+├── app     --  后端逻辑代码
 ├── iserverface -- 接口层
 ├── server -- 实现层
 ├── vendor -- 依赖包
 ├── zlog --   日志
 
 ```
-
-## 搭建步骤
-
--
-下载node并安装：[https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi](https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi)
-;
-
 
 ## 微信
 
