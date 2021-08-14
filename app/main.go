@@ -96,6 +96,9 @@ func main() {
 	// 初始化redis
 	common.InitRedis()
 
+	// 初始化mysql
+	common.InitMysql()
+
 	// 初始化server
 	server.GWServer = server.NewServer()
 

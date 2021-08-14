@@ -2,8 +2,8 @@ package common
 
 import (
 	"fmt"
-	"wsserver/configs"
 	"github.com/go-redis/redis"
+	"wsserver/configs"
 )
 
 var (
